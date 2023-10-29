@@ -1,4 +1,4 @@
-{ config
+moduleConfig: { config
 , lib
 , buildGoModule
 , fetchFromGitHub
