@@ -13,11 +13,13 @@ in
     pname = "virtwold";
     version = "23.03.0";
 
+    proxyVendor = true;
+
     buildInputs = [ libpcap ];
 
-    vendorSha256 = "sha256-0+Rc7QXzmh2f5Y4ULTcOB3N4yw/WB6fVsqu3K2Hnyv0=";
+    vendorSha256 = "sha256-AubVmFptEQLqj5YUwP33VgIHvCB7c9H4fM7BzHxpQ1M=";
 
-    Build = "go build -v -work -x -a -ldflags -s";
+    preBuild = "go get github.com/google/gopacket/pcap@v1.1.19";
 
     src = fetchFromGitHub {
       owner = "ScottESanDiego";
